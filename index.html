@@ -109,102 +109,6 @@
             }
         }
 
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 60px 20px;
-            background: #1f1f1f;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-        .feature-card {
-            background-color: #333;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-        .feature-card h3 {
-            font-size: 2em;
-            color: #ff3d00;
-            margin-bottom: 15px;
-        }
-        .feature-card p {
-            font-size: 1.3em;
-            color: #bbb;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background-color: #1e1e1e;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .testimonial {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.4em;
-            color: #fff;
-            padding: 20px;
-            border: 1px solid #444;
-            border-radius: 10px;
-            background-color: #333;
-            margin-bottom: 30px;
-        }
-        .testimonial h3 {
-            font-size: 2em;
-            color: #ff3d00;
-            margin-bottom: 15px;
-        }
-
-        /* FAQ Section */
-        .faq {
-            background-color: #121212;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        .faq h2 {
-            font-size: 3.5em;
-            margin-bottom: 40px;
-            color: #ff3d00;
-        }
-        .faq-item {
-            margin-bottom: 30px;
-        }
-        .faq-item h3 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #ff3d00;
-        }
-        .faq-item p {
-            font-size: 1.2em;
-            color: #bbb;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
-            padding: 40px;
-            color: #bbb;
-            text-align: center;
-            font-size: 1.2em;
-            position: relative;
-            z-index: 10;
-        }
-        footer a {
-            color: #ff3d00;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
         /* Keyframe for Animations */
         @keyframes fadeIn {
             0% {
@@ -214,23 +118,6 @@
             100% {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-            .hero h2 {
-                font-size: 2.5em;
-            }
-            .cta-btn {
-                padding: 15px 30px;
-                font-size: 1.4em;
-            }
-            .features {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -244,7 +131,7 @@
 <div class="hero">
     <h2>Unlock Your Gaming Power</h2>
     <p>Experience the best cheats, fully optimized and ready to enhance your game. Get ahead of the competition now!</p>
-    <a href="https://cdn.discordapp.com/attachments/1298873885055258625/1321373271651909708/NetWare.zip?ex=6795dec1&is=67948d41&hm=c33454ff45449c13f970348351681cd03445e53774062f8f898ed17ade7faed9" download="NetWare.zip">
+    <a href="https://cdn.discordapp.com/attachments/1298873885055258625/1321373271651909708/NetWare.zip?ex=6795dec1&is=67948d41&hm=c33454ff45449c13f970348351681cd03445e53774062f8f898ed17ade7faed9" download="NetWare.zip" id="download-link">
         <button class="cta-btn">Download NetWare</button>
     </a>
     <p class="download-stats">Downloads: <span id="download-count">0</span></p>
@@ -296,6 +183,26 @@
     <p>&copy; 2025 Livvy Cheats. All Rights Reserved.</p>
     <p><a href="https://www.privacy-policy.com" target="_blank">Privacy Policy</a> | <a href="https://www.terms-of-service.com" target="_blank">Terms of Service</a></p>
 </footer>
+
+<script>
+    // Get the current download count from localStorage, default to 0 if not available
+    let downloadCount = localStorage.getItem('downloadCount') ? parseInt(localStorage.getItem('downloadCount')) : 0;
+    
+    // Display the current download count on the page
+    document.getElementById('download-count').textContent = downloadCount;
+
+    // Add event listener for when the download button is clicked
+    document.getElementById('download-link').addEventListener('click', function() {
+        // Increment the download count
+        downloadCount++;
+        
+        // Update the download count display on the page
+        document.getElementById('download-count').textContent = downloadCount;
+        
+        // Save the updated download count in localStorage so it persists
+        localStorage.setItem('downloadCount', downloadCount);
+    });
+</script>
 
 </body>
 </html>
