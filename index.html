@@ -6,59 +6,97 @@
     <meta name="description" content="Livvy Cheats - Best cheats for your favorite games">
     <title>Livvy Cheats</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
         }
         header {
-            background-color: #1a1a1a;
-            padding: 20px;
+            background: #222;
+            padding: 50px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         header h1 {
-            margin: 0;
+            font-size: 3em;
+            color: #ff6600;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #1e1e1e, #3e3e3e);
+            color: #fff;
+            text-align: center;
+            padding: 50px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .hero h2 {
             font-size: 2.5em;
             color: #ff6600;
-        }
-        .content {
-            text-align: center;
-            padding: 50px;
-        }
-        .content h2 {
-            font-size: 1.8em;
-            color: #ff6600;
+            margin-bottom: 20px;
         }
         .download-btn {
             background-color: #ff6600;
             color: white;
-            padding: 15px 30px;
+            padding: 20px 50px;
             font-size: 1.5em;
+            font-weight: 600;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         .download-btn:hover {
-            background-color: #ff4500;
+            background-color: #e65c00;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-        .counter {
-            font-size: 2em;
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+        .download-stats {
+            font-size: 1.8em;
+            margin-top: 20px;
             color: #ff6600;
+            font-weight: bold;
         }
-        footer {
-            background-color: #1a1a1a;
-            padding: 10px;
+        .footer {
+            background-color: #222;
+            padding: 20px;
             text-align: center;
-            font-size: 0.9em;
-            color: #999;
+            font-size: 1em;
+            color: #888;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        .footer a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            .hero h2 {
+                font-size: 2em;
+            }
         }
     </style>
 </head>
@@ -68,27 +106,25 @@
     <h1>Livvy Cheats</h1>
 </header>
 
-<div class="content">
-    <h2>Download the Best Cheats for Your Favorite Games</h2>
-    <p>Join thousands of users who have downloaded Livvy Cheats and unlocked their gaming potential.</p>
+<div class="hero">
+    <h2>Unlock Your Full Gaming Potential</h2>
+    <p>Join thousands of users who have downloaded the latest and best cheats for your favorite games.</p>
     <button class="download-btn" onclick="incrementDownload()">Download Now</button>
-    <p>Downloads: <span id="download-count" class="counter">0</span></p>
+    <p class="download-stats">Downloads: <span id="download-count">0</span></p>
 </div>
 
-<footer>
-    <p>&copy; 2025 Livvy Cheats. All rights reserved.</p>
+<footer class="footer">
+    <p>&copy; 2025 Livvy Cheats. All rights reserved. <a href="#">Privacy Policy</a></p>
 </footer>
 
 <script>
     let downloadCount = 0;
 
-    // Function to update the download count (this would be linked to backend in production)
+    // Simulate downloading and increase count
     function incrementDownload() {
         downloadCount++;
         document.getElementById('download-count').textContent = downloadCount;
-
-        // Call to backend to save download count (you can use Firebase or a database)
-        // Example API call could be: updateDownloadCount(downloadCount);
+        // Save the updated download count (e.g., Firebase or API call)
     }
 </script>
 
