@@ -285,30 +285,29 @@
         <p>Yes! We thoroughly test all cheats to make sure they are undetectable and secure.</p>
     </div>
     <div class="faq-item">
-        <h3>How do I download it?</h3>
-        <p>Simply click the "Download Now" button, and you'll have instant access to the file.</p>
+        <h3>How do I download cheats?</h3>
+        <p>Click the “Download NetWare” button, complete any required steps, and the cheat will be available for download.</p>
     </div>
 </section>
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2025 Livvy Cheats | All Rights Reserved</p>
-    <p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+    <p>&copy; 2025 Livvy Cheats | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
 </footer>
 
 <script>
     let downloadCount = 0;
 
-    // Function to trigger download
     function triggerDownload() {
+        // Increment the download count
         downloadCount++;
         document.getElementById('download-count').textContent = downloadCount;
 
-        // Initiating file download
-        const downloadLink = document.createElement('a');
-        downloadLink.href = 'https://example.com/yourfile.zip';  // Replace with your actual file URL
-        downloadLink.download = 'yourfile.zip';  // Replace with your file name
-        downloadLink.click();
+        // Open the download link
+        window.location.href = "https://www.your-download-link.com";  // Replace with your actual download URL
+        
+        // Close the window after starting the download
+        window.close();
     }
 </script>
 
