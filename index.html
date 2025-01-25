@@ -59,6 +59,8 @@
             color: #fff;
             padding: 0 20px;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            animation: parallax 2s ease-out forwards;
         }
         .hero h2 {
             font-size: 3.5em;
@@ -90,15 +92,35 @@
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
+        .download-stats {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ff6600;
+            animation: fadeIn 3s ease-out;
+        }
 
-        /* Feature Section */
+        /* Parallax Effect */
+        @keyframes parallax {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 50% 50%;
+            }
+        }
+
+        /* Features Section */
         .features {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             padding: 60px 20px;
-            background: #1e1e1e;
+            background: linear-gradient(145deg, #1e1e1e, #333);
             text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-top: -100px;
+            z-index: 10;
+            position: relative;
         }
         .feature-card {
             background-color: #333;
@@ -272,33 +294,15 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 Livvy Cheats. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+    <p>&copy; 2025 Livvy Cheats. All rights reserved. | <a href="#">Privacy Policy</a></p>
 </footer>
 
 <script>
     let downloadCount = 0;
 
-    // Simulate download process and update counter
     function incrementDownload() {
         downloadCount++;
-        document.getElementById('download-count').textContent = downloadCount;
-        animateDownloadCount();
-    }
-
-    // Smooth animation effect for download count
-    function animateDownloadCount() {
-        let counter = document.getElementById('download-count');
-        let currentVal = parseInt(counter.textContent);
-        let newVal = currentVal + 1;
-
-        let countAnimation = setInterval(function() {
-            if (currentVal < newVal) {
-                currentVal++;
-                counter.textContent = currentVal;
-            } else {
-                clearInterval(countAnimation);
-            }
-        }, 50);
+        document.getElementById("download-count").textContent = downloadCount;
     }
 </script>
 
