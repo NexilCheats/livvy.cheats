@@ -3,118 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Livvy Cheats - Unlock the full potential of your games with the best cheats available.">
+    <meta name="description" content="Livvy Cheats - Unlock the best game cheats for a better experience.">
+    <meta name="author" content="Livvy Cheats">
     <title>Livvy Cheats</title>
+    <link rel="icon" href="https://via.placeholder.com/32x32" type="image/png">
     <style>
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
             color: #fff;
-            line-height: 1.6;
             overflow-x: hidden;
         }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, #ff6600, #e65c00);
-            padding: 50px;
+            background: #222;
+            padding: 40px 0;
             text-align: center;
-            position: relative;
-            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
         }
         header h1 {
-            font-size: 3.5em;
-            color: #fff;
-            font-weight: 700;
+            font-size: 4em;
+            color: #ff6600;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             animation: fadeIn 1s ease-out;
         }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+
+        /* Hero Section */
         .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://via.placeholder.com/1600x900');
+            background-position: center;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: url('https://via.placeholder.com/1600x900') no-repeat center center/cover;
-            color: #fff;
             text-align: center;
-            padding: 50px;
-            position: relative;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            padding: 0 20px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
         }
         .hero h2 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 20px;
             color: #ff6600;
-            animation: fadeIn 1.5s ease-out;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-out;
         }
         .hero p {
             font-size: 1.5em;
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.4;
-            animation: fadeIn 2s ease-out;
+            animation: fadeIn 2.5s ease-out;
         }
-        .download-btn {
+        .cta-btn {
             background-color: #ff6600;
-            color: white;
+            color: #fff;
             padding: 20px 40px;
             font-size: 1.6em;
-            font-weight: 600;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             margin-top: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             z-index: 1;
         }
-        .download-btn:hover {
-            background-color: #e65c00;
+        .cta-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
-        .download-btn:active {
+        .cta-btn:active {
             transform: scale(0.98);
         }
+
+        /* Downloads Section */
         .download-stats {
+            margin-top: 40px;
             font-size: 1.5em;
-            margin-top: 20px;
+            font-weight: 700;
             color: #ff6600;
-            font-weight: bold;
-            animation: fadeIn 2.5s ease-out;
+            animation: fadeIn 3s ease-out;
         }
-        .footer {
-            background-color: #111;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.1em;
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            padding: 40px;
             color: #bbb;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            text-align: center;
+            font-size: 1.2em;
+            position: relative;
+            z-index: 10;
         }
-        .footer a {
+        footer a {
             color: #ff6600;
             text-decoration: none;
         }
-        .footer a:hover {
+        footer a:hover {
             text-decoration: underline;
         }
+
+        /* Keyframe for Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.5em;
@@ -122,8 +142,11 @@
             .hero h2 {
                 font-size: 2.5em;
             }
-            .download-btn {
+            .cta-btn {
                 padding: 15px 30px;
+                font-size: 1.4em;
+            }
+            .download-stats {
                 font-size: 1.4em;
             }
         }
@@ -136,34 +159,32 @@
 </header>
 
 <div class="hero">
-    <h2>Unlock The Best Cheats</h2>
-    <p>Experience your games like never before. Download our cheats now and level up your gaming performance instantly.</p>
-    <button class="download-btn" onclick="incrementDownload()">Download Now</button>
+    <h2>Unlock The Best Cheats Now</h2>
+    <p>Maximize your gaming potential and dominate the competition with the best cheats in the market. No more limitations, just pure gaming power.</p>
+    <button class="cta-btn" onclick="incrementDownload()">Download Now</button>
     <p class="download-stats">Downloads: <span id="download-count">0</span></p>
 </div>
 
-<footer class="footer">
-    <p>&copy; 2025 Livvy Cheats. All rights reserved. <a href="#">Privacy Policy</a></p>
+<footer>
+    <p>&copy; 2025 Livvy Cheats. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
 </footer>
 
 <script>
     let downloadCount = 0;
 
-    // Simulate downloading and update counter
+    // Simulate download process and update counter
     function incrementDownload() {
         downloadCount++;
         document.getElementById('download-count').textContent = downloadCount;
         animateDownloadCount();
-        // Simulate an API call to store the download count if needed.
     }
 
-    // Animate download count to give it a smoother feel
+    // Smooth animation effect for download count
     function animateDownloadCount() {
         let counter = document.getElementById('download-count');
         let currentVal = parseInt(counter.textContent);
         let newVal = currentVal + 1;
 
-        // Smooth animation effect for download count
         let countAnimation = setInterval(function() {
             if (currentVal < newVal) {
                 currentVal++;
