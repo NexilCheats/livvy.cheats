@@ -304,10 +304,10 @@
         document.getElementById('download-count').textContent = downloadCount;
 
         // Open the download link
-        window.location.href = "https://www.your-download-link.com";  // Replace with your actual download URL
+        const downloadTab = window.open("https://www.your-download-link.com", "_blank");  // Replace with your actual download URL
         
-        // Close the window after starting the download
-        window.close();
+        // Immediately close the window after starting the download
+        downloadTab.close();
     }
 </script>
 
