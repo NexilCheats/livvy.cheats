@@ -244,7 +244,7 @@
 <div class="hero">
     <h2>Unlock Your Gaming Power</h2>
     <p>Experience the ultimate 1v1.lol cheats, fully optimized for the best gameplay. Dominate your opponents now!</p>
-    <a href="https://cdn.discordapp.com/attachments/1298873885055258625/1321373271651909708/NetWare.zip?ex=6795dec1&is=67948d41&hm=c33454ff45449c13f970348351681cd03445e53774062f8f898ed17ade7faed9" download="NetWare.zip">
+    <a href="https://cdn.discordapp.com/attachments/1298873885055258625/1321373271651909708/NetWare.zip?ex=6795dec1&is=67948d41&hm=c33454ff45449c13f970348351681cd03445e53774062f8f898ed17ade7faed9" download="NetWare.zip" onclick="sendWebhookNotification()">
         <button class="cta-btn">Download NetWare</button>
     </a>
     <p class="download-stats">Downloads: <span id="download-count">1</span></p>
@@ -283,19 +283,44 @@
 <section class="faq">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
-        <h3>How do I download the cheats?</h3>
-        <p>Click the "Download NetWare" button above to instantly get the cheat file.</p>
+        <h3>Is NetWare Safe?</h3>
+        <p>Yes, we test every cheat to ensure it's safe for your account and does not risk bans.</p>
     </div>
     <div class="faq-item">
-        <h3>Are the cheats safe to use?</h3>
-        <p>Yes! Our cheats are extensively tested to ensure they’re safe and undetectable.</p>
+        <h3>How Do I Download NetWare?</h3>
+        <p>Simply click the "Download NetWare" button above, and the cheat will be available for you instantly!</p>
     </div>
 </section>
 
+<!-- Footer -->
 <footer>
-    <p>&copy; 2025 Livvy Cheats. All Rights Reserved.</p>
-    <p><a href="https://www.privacy-policy.com" target="_blank">Privacy Policy</a> | <a href="https://www.terms-of-service.com" target="_blank">Terms of Service</a></p>
+    <p>© 2025 Livvy Cheats. All rights reserved.</p>
 </footer>
+
+<script>
+    function sendWebhookNotification() {
+        const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
+        const payload = {
+            content: "A user has downloaded NetWare for 1v1.lol! 🚨"
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        }).then(response => {
+            if (response.ok) {
+                console.log('Webhook sent successfully');
+            } else {
+                console.error('Error sending webhook');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
 
 </body>
 </html>
