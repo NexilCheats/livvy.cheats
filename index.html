@@ -298,18 +298,37 @@
 </footer>
 
 <script>
-    // Function to send webhook notification
     function sendWebhookNotification() {
-        const webhookURL = "https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss";  // Replace with your actual webhook URL
-        fetch(webhookURL, {
+        const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
+        const date = new Date().toISOString();
+        const payload = {
+            username: "Livvy Cheats",
+            embeds: [{
+                title: "Team Livvy Cheats",
+                description: "Someone Downloaded NetWare!",
+                fields: [{
+                    name: "Why look here when you can also use NetWare?",
+                    value: "Date: " + date
+                }],
+                timestamp: date,
+                color: 0xff3d00
+            }]
+        };
+
+        fetch(webhookUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                content: "A user just downloaded NetWare!",
-                username: "NetWare Bot"
-            })
+            body: JSON.stringify(payload)
+        }).then(response => {
+            if (response.ok) {
+                console.log('Webhook sent successfully');
+            } else {
+                console.error('Error sending webhook');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
         });
     }
 </script>
