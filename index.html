@@ -275,7 +275,7 @@
     </div>
     <div class="testimonial">
         <h3>“Best in the Market”</h3>
-        <p>I've tried many cheat services, but nothing compares to NetWare. It’s a must-have for any serious 1v1.lol player!</p>
+        <p>I've tried many cheat services, but nothing compares to NetWare. It’s a must-have for serious gamers.</p>
     </div>
 </section>
 
@@ -300,8 +300,19 @@
 <script>
     function sendWebhookNotification() {
         const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
+        const date = new Date().toISOString();
         const payload = {
-            content: "A user has downloaded NetWare for 1v1.lol! 🚨"
+            username: "Livvy Cheats",
+            embeds: [{
+                title: "Team Livvy Cheats",
+                description: "Someone Downloaded NetWare!",
+                fields: [{
+                    name: "Why look here when you can also use NetWare?",
+                    value: "Date: " + date
+                }],
+                timestamp: date,
+                color: 0xff3d00
+            }]
         };
 
         fetch(webhookUrl, {
