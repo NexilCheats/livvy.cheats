@@ -267,7 +267,7 @@
         <a href="https://github.com/NexilCheats/livvy.cheats.download/raw/refs/heads/main/NetWare.zip" download="NetWare.zip" onclick="sendWebhookNotification()">
             <button class="cta-btn">Download NetWare</button>
         </a>
-        <p class="download-stats">Over 5000 downloads!</p>
+        <p class="download-stats">Over 12 downloads!</p>
     </div>
 
     <div class="features">
@@ -276,41 +276,66 @@
             <p>Run faster than your opponents and leave them in the dust!</p>
         </div>
         <div class="feature-card">
-            <h3>Unlimited Ammo</h3>
-            <p>Never run out of ammo in your battles.</p>
+            <h3>Accuracy Boost</h3>
+            <p>Enhance your aim and hit targets with perfect precision.</p>
         </div>
         <div class="feature-card">
-            <h3>Wall Hacks</h3>
-            <p>See through walls and plan your attacks strategically.</p>
+            <h3>Anti-Aim</h3>
+            <p>Confuse your enemies and make it harder for them to land shots on you.</p>
         </div>
     </div>
 
     <div class="testimonials">
+        <h2>User Testimonials</h2>
         <div class="testimonial">
-            <h3>Great cheat, super easy to use!</h3>
-            <p>Just downloaded it and I’m already dominating!</p>
+            <h3>“Best cheat I’ve ever used!”</h3>
+            <p>The speed boost and accuracy mods are incredible. 1v1.lol just became a whole new game for me!</p>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do I download the cheats?</h3>
+            <p>Click on the “Download NetWare” button, and you'll be redirected to the download page.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is this cheat safe to use?</h3>
+            <p>Yes, our cheat is regularly updated and tested to ensure it's secure and undetected.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Livvy Cheats. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>© 2025 livvy cheats. All Rights Reserved. | <a href="https://discord.gg/z4Z7gA9">Join our Discord</a></p>
     </footer>
 </div>
 
 <script>
-    function onCaptchaSuccess() {
-        document.getElementById('turnstile-container').style.display = 'none';
-        document.querySelector('.content').style.display = 'block'; // Show content after CAPTCHA success
+    // Send a webhook notification when the download button is clicked
+    function sendWebhookNotification() {
+        const webhookURL = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
+        const currentDate = new Date().toLocaleString();
+
+        const payload = {
+            content: `A download of NetWare was initiated on ${currentDate}`
+        };
+
+        fetch(webhookURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Webhook sent:', data))
+        .catch(error => console.error('Error:', error));
     }
 
-    // Webhook notification
-    function sendWebhookNotification() {
-        const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
-        fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ content: 'User has clicked the download button!' })
-        });
+    // Handle CAPTCHA success
+    function onCaptchaSuccess() {
+        document.getElementById('turnstile-container').style.display = 'none';
+        document.querySelector('.content').style.display = 'block';
     }
 </script>
 
