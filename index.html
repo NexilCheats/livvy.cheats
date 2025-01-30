@@ -22,12 +22,24 @@
             color: #fff;
             overflow-x: hidden;
         }
-        h1, h2, h3 {
-            font-weight: 700;
+
+        /* Hide everything initially */
+        .content {
+            display: none;
         }
-        a {
-            color: inherit;
-            text-decoration: none;
+
+        /* Turnstile Container */
+        .turnstile-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
         }
 
         /* Header */
@@ -238,60 +250,73 @@
 </head>
 <body>
 
-<header>
-    <h1>NetWare Cheats for 1v1.lol</h1>
-</header>
-
-<div class="hero">
-    <h2>Unlock Your Gaming Power</h2>
-    <p>Experience the ultimate 1v1.lol cheats, fully optimized for the best gameplay. Dominate your opponents now!</p>
-    <a href="https://github.com/NexilCheats/livvy.cheats.download/raw/refs/heads/main/NetWare.zip" download="NetWare.zip" onclick="sendWebhookNotification()">
-        <button class="cta-btn">Download NetWare</button>
-    </a>
-    <p class="download-stats">Over 5000 downloads!</p>
-
-    <!-- Cloudflare Turnstile CAPTCHA -->
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA64mb9k3wSo-43W"></div>
+<!-- Turnstile CAPTCHA -->
+<div class="turnstile-container" id="turnstile-container">
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA64mb9k3wSo-43W" data-callback="onCaptchaSuccess"></div>
 </div>
 
-<div class="features">
-    <div class="feature-card">
-        <h3>Speed Hacks</h3>
-        <p>Run faster than your opponents and leave them in the dust!</p>
+<!-- Main Content -->
+<div class="content">
+    <header>
+        <h1>NetWare Cheats for 1v1.lol</h1>
+    </header>
+
+    <div class="hero">
+        <h2>Unlock Your Gaming Power</h2>
+        <p>Experience the ultimate 1v1.lol cheats, fully optimized for the best gameplay. Dominate your opponents now!</p>
+        <a href="https://github.com/NexilCheats/livvy.cheats.download/raw/refs/heads/main/NetWare.zip" download="NetWare.zip" onclick="sendWebhookNotification()">
+            <button class="cta-btn">Download NetWare</button>
+        </a>
+        <p class="download-stats">Over 5000 downloads!</p>
     </div>
-    <div class="feature-card">
-        <h3>Accuracy Boost</h3>
-        <p>Enhance your aim and hit targets with perfect precision.</p>
+
+    <div class="features">
+        <div class="feature-card">
+            <h3>Speed Hacks</h3>
+            <p>Run faster than your opponents and leave them in the dust!</p>
+        </div>
+        <div class="feature-card">
+            <h3>Accuracy Boost</h3>
+            <p>Enhance your aim and hit targets with perfect precision.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Anti-Aim</h3>
+            <p>Confuse your enemies and make it harder for them to land shots on you.</p>
+        </div>
     </div>
-    <div class="feature-card">
-        <h3>Anti-Aim</h3>
-        <p>Confuse your enemies and make it harder for them to land shots on you.</p>
+
+    <div class="testimonials">
+        <h2>User Testimonials</h2>
+        <div class="testimonial">
+            <h3>“Best cheat I’ve ever used!”</h3>
+            <p>The speed boost and accuracy mods are incredible. 1v1.lol just became a whole new game for me!</p>
+        </div>
     </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How do I download the cheats?</h3>
+            <p>Click on the “Download NetWare” button, and you'll be redirected to the download page.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is this cheat safe to use?</h3>
+            <p>Yes, our cheat is regularly updated and tested to ensure it's secure and undetected.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 livvy cheats. All Rights Reserved. | <a href="https://discord.gg/z4Z7kkJrHY">Join our Discord</a></p>
+    </footer>
 </div>
 
-<div class="testimonials">
-    <h2>User Testimonials</h2>
-    <div class="testimonial">
-        <h3>“Best cheat I’ve ever used!”</h3>
-        <p>The speed boost and accuracy mods are incredible. 1v1.lol just became a whole new game for me!</p>
-    </div>
-</div>
-
-<div class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-        <h3>How do I download the cheats?</h3>
-        <p>Click on the “Download NetWare” button, and you'll be redirected to the download page.</p>
-    </div>
-    <div class="faq-item">
-        <h3>Is this cheat safe to use?</h3>
-        <p>Yes, our cheat is regularly updated and tested to ensure it's secure and undetected.</p>
-    </div>
-</div>
-
-<footer>
-    <p>© 2025 NetWare. All Rights Reserved. | <a href="https://discord.gg/z4Z7kkJrHY">Join our Discord</a></p>
-</footer>
+<script>
+    function onCaptchaSuccess(token) {
+        // Hide the CAPTCHA and show the content
+        document.getElementById('turnstile-container').style.display = 'none';
+        document.querySelector('.content').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
