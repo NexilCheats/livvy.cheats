@@ -8,6 +8,7 @@
     <title>Livvy Cheats - 1v1.lol</title>
     <link rel="icon" href="https://via.placeholder.com/32x32" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> <!-- Add the CAPTCHA script -->
     <style>
         /* General Reset */
         * {
@@ -247,49 +248,50 @@
     <a href="https://github.com/NexilCheats/livvy.cheats.download/raw/refs/heads/main/NetWare.zip" download="NetWare.zip" onclick="sendWebhookNotification()">
         <button class="cta-btn">Download NetWare</button>
     </a>
-    <p class="download-stats">Downloads: <span id="download-count">12</span></p>
+    <p class="download-stats">Over 5000 downloads!</p>
+
+    <!-- Cloudflare Turnstile CAPTCHA -->
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAAA64mb9k3wSo-43W"></div>
 </div>
 
-<!-- Cloudflare JavaScript Protection -->
-<script>
-    // Your Cloudflare protection script here, if you have specific settings. 
-    // Typically, Cloudflare will automatically handle page protections.
+<div class="features">
+    <div class="feature-card">
+        <h3>Speed Hacks</h3>
+        <p>Run faster than your opponents and leave them in the dust!</p>
+    </div>
+    <div class="feature-card">
+        <h3>Accuracy Boost</h3>
+        <p>Enhance your aim and hit targets with perfect precision.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Anti-Aim</h3>
+        <p>Confuse your enemies and make it harder for them to land shots on you.</p>
+    </div>
+</div>
 
-    // Optional: If you're using custom methods for verification:
-    function sendWebhookNotification() {
-        const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
-        const date = new Date().toISOString();
-        const payload = {
-            username: "Livvy Cheats",
-            embeds: [{
-                title: "Team Livvy Cheats",
-                description: "Someone Downloaded NetWare!",
-                fields: [{
-                    name: "Why look here when you can also use NetWare?",
-                    value: "Date: " + date
-                }],
-                timestamp: date,
-                color: 0xff3d00
-            }]
-        };
+<div class="testimonials">
+    <h2>User Testimonials</h2>
+    <div class="testimonial">
+        <h3>“Best cheat I’ve ever used!”</h3>
+        <p>The speed boost and accuracy mods are incredible. 1v1.lol just became a whole new game for me!</p>
+    </div>
+</div>
 
-        fetch(webhookUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        }).then(response => {
-            if (response.ok) {
-                console.log('Webhook sent successfully');
-            } else {
-                console.error('Error sending webhook');
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-        });
-    }
-</script>
+<div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <h3>How do I download the cheats?</h3>
+        <p>Click on the “Download NetWare” button, and you'll be redirected to the download page.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Is this cheat safe to use?</h3>
+        <p>Yes, our cheat is regularly updated and tested to ensure it's secure and undetected.</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 NetWare. All Rights Reserved. | <a href="https://discord.gg/z4Z7kkJrHY">Join our Discord</a></p>
+</footer>
 
 </body>
 </html>
