@@ -297,45 +297,65 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>How do I download the cheats?</h3>
-            <p>Click on the “Download NetWare” button, and you'll be redirected to the download page.</p>
+            <p>Simply click the download button and extract the ZIP file.</p>
         </div>
         <div class="faq-item">
-            <h3>Is this cheat safe to use?</h3>
-            <p>Yes, our cheat is regularly updated and tested to ensure it's secure and undetected.</p>
+            <h3>Is it safe to use these cheats?</h3>
+            <p>Yes! We ensure all cheats are undetectable and won’t get you banned.</p>
         </div>
     </div>
 
     <footer>
-        <p>© 2025 livvy cheats. All Rights Reserved. | <a href="https://discord.gg/z4Z7gA9">Join our Discord</a></p>
+        <p>© 2025 Livvy Cheats. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </div>
 
+<!-- JavaScript -->
 <script>
-    // Send a webhook notification when the download button is clicked
-    function sendWebhookNotification() {
-        const webhookURL = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
-        const currentDate = new Date().toLocaleString();
-
-        const payload = {
-            content: `A download of NetWare was initiated on ${currentDate}`
-        };
-
-        fetch(webhookURL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        })
-        .then(response => response.json())
-        .then(data => console.log('Webhook sent:', data))
-        .catch(error => console.error('Error:', error));
-    }
-
-    // Handle CAPTCHA success
     function onCaptchaSuccess() {
+        // Hide the CAPTCHA container after successful completion
         document.getElementById('turnstile-container').style.display = 'none';
         document.querySelector('.content').style.display = 'block';
+    }
+
+    function sendWebhookNotification() {
+        const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
+        const webhookMessage = {
+            "username": "Livvy Cheats Bot",
+            "embeds": [
+                {
+                    "title": "Download Notification",
+                    "description": "A user has downloaded the cheat.",
+                    "color": 16711680,
+                    "fields": [
+                        {
+                            "name": "User",
+                            "value": "Anonymous"
+                        },
+                        {
+                            "name": "Download",
+                            "value": "NetWare.zip"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(webhookMessage)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Webhook notification sent');
+            } else {
+                console.error('Failed to send webhook notification');
+            }
+        })
+        .catch(error => console.error('Error sending webhook:', error));
     }
 </script>
 
