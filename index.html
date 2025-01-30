@@ -306,15 +306,24 @@
     </div>
 
     <footer>
-        <p>© 2025 livvy cheats. All Rights Reserved. | <a href="https://discord.gg/z4Z7kkJrHY">Join our Discord</a></p>
+        <p>© 2025 Livvy Cheats. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </div>
 
 <script>
-    function onCaptchaSuccess(token) {
-        // Hide the CAPTCHA and show the content
+    function onCaptchaSuccess() {
         document.getElementById('turnstile-container').style.display = 'none';
-        document.querySelector('.content').style.display = 'block';
+        document.querySelector('.content').style.display = 'block'; // Show content after CAPTCHA success
+    }
+
+    // Webhook notification
+    function sendWebhookNotification() {
+        const webhookUrl = 'https://discord.com/api/webhooks/1332938740762673173/UDEGYyTC7DXpSYhjvEGbt6xFULzr2OxioS7vqZ2yX-Z1lYODbEYV14k5EWxVVg0Ui6ss';
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content: 'User has clicked the download button!' })
+        });
     }
 </script>
 
